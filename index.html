@@ -3,96 +3,536 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portal de notícias</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="alert alert-success alert-dismissible fade show">
-                    <button class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
-                    Confira todas as novidades do blog <a href="#">clicando aqui</a>
-                </div>
+    <header>
+        <div class="container pt-5 pb-3 d-flex">
+            <h1 class="fw-bold m-0 p-0">
+                Portal de notícias
+            </h1>
+            <div class="d-flex subcontainer">
+                <a class="btn rounded me-2" data-bs-toggle="modal" data-bs-target="#modal">
+                    <i class="bi bi-envelope"></i>
+                    E-mail
+                </a>
+                <p class="m-0 p-0">
+                    Assine nosso serviço de notícias por e-mail!
+                </p>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-8">
-                <h2 class="mb-3">Últimas postagens</h2>
-                <div class="container g-0">
-                    <div class="row">
-                        <div class="col-md-4 post">
-                            <img src="https://placehold.co/180x180">
-                            <h4 class="h5">Título da postagem</h4>
-                            <time>11/02/2025</time>
-                            <a class="btn btn-primary btn-sm">Leia mais</a>
-                        </div>
-                        <div class="col-md-4 post">
-                            <img src="https://placehold.co/180x180">
-                            <h4 class="h5">Título da postagem</h4>
-                            <time>11/02/2025</time>
-                            <a class="btn btn-primary btn-sm">Leia mais</a>
-                        </div>
-                        <div class="col-md-4 post">
-                            <img src="https://placehold.co/180x180">
-                            <h4 class="h5">Título da postagem</h4>
-                            <time>11/02/2025</time>
-                            <a class="btn btn-primary btn-sm">Leia mais</a>
-                        </div>
-                        <div class="col-md-4 post">
-                            <img src="https://placehold.co/180x180">
-                            <h4 class="h5">Título da postagem</h4>
-                            <time>11/02/2025</time>
-                            <a class="btn btn-primary btn-sm">Leia mais</a>
-                        </div>
-                        <div class="col-md-4 post">
-                            <img src="https://placehold.co/180x180">
-                            <h4 class="h5">Título da postagem</h4>
-                            <time>11/02/2025</time>
-                            <a class="btn btn-primary btn-sm">Leia mais</a>
-                        </div>
-                        <div class="col-md-4 post">
-                            <img src="https://placehold.co/180x180">
-                            <h4 class="h5">Título da postagem</h4>
-                            <time>11/02/2025</time>
-                            <a class="btn btn-primary btn-sm">Leia mais</a>
-                        </div>
-                    </div>
+    </header>
+
+    <div id="modal" class="modal" data-bs-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>
+                        Insira seu e-mail
+                    </h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-            </div>
-            <div class="col-md-4 d-flex justify-content-end">
-                <div class="d-flex flex-column">
-                    <h2 class="mb-3">Anunciantes</h2>
-                    <img src="https://placehold.co/180x180">
-                    <a href="#" class="mb-3">Título da postagem</a>
-                    <img src="https://placehold.co/180x180">
-                    <a href="#" class="mb-3">Título da postagem</a>
-                    <img src="https://placehold.co/180x180">
-                    <a href="#" class="mb-3">Título da postagem</a>
+                <div class="modal-body">
+                    <form id="form-modal">
+                        <input class="form-control" type="email" required
+                        oninvalid="this.setCustomValidity('Por favor, preencha seu email corretamente')" oninput="this.setCustomValidity('')">
+                        <button class="btn d-block w-100 mt-2" type="submit">
+                            Enviar
+                        </button>
+                    </form>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <h2>Entre em contato</h2>
-                <form action="">
-                    <label class="form-label" for="nome">Seu nome:</label>
-                    <input class="form-control" type="text" id="nome">
-                    <label for="email" class="form-label">Seu e-mail:</label>
-                    <input type="email" id="email" class="form-control">
-                    <label for="mensagem" class="form-label">Sua mensagem:</label>
-                    <textarea id="mensagem" class="form-control"></textarea>
-                    <div class="form-check form-switch">
-                        <label for="termos" class="form-check-label">Li e concordo com os termos do site</label>
-                        <input id="termos" type="checkbox" class="form-check-input">
-                    </div>
-                    <button id="enviar" class="btn btn-success">Enviar</button>
-                </form>
             </div>
         </div>
     </div>
 
+    <div id="modal2" class="modal" data-bs-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>
+                        Parabéns!
+                    </h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Seu e-mail foi cadastrado em nossa lista de assinantes, agora você recebrá as melhores notícias
+                        em sua caixa principal
+                    </p>
+                    <a class="btn d-block w-100 mt-2" href="https://mail.google.com/mail/u/0/#inbox">
+                        <i class="bi bi-envelope"></i>
+                        Ir para e-mail
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="container mb-5">
+        <ul class="d-flex justify-content-between m-0 p-0 mb-1">
+            <li class="fs-5">
+                <a class="nav-link" href="#produtos">
+                    Produtos
+                </a>
+            </li>
+            <li class="fs-5">
+                <a class="nav-link" href="#noticias">
+                    Notícias
+                </a>
+            </li>
+            <li class="fs-5">
+                <a class="nav-link" href="politica">
+                    Política
+                </a>
+            </li>
+            <li class="fs-5">
+                <a class="nav-link" href="#economia">
+                    Economia
+                </a>
+            </li>
+            <li class="fs-5">
+                <a class="nav-link" href="#tecnologia">
+                    Tecnologia
+                </a>
+            </li>
+            <li class="fs-5">
+                <a class="nav-link" href="#esportes">
+                    Esportes
+                </a>
+            </li>
+        </ul>
+    </nav>
+    
+    <section id="produtos" class="mb-5">
+        <div class="container p-0">
+            <div class="row">
+                <div class="col-sm-12 col-md-9 col-lg-10 produtos">
+                    <h2 class="mb-4 text-center pb-3">Produtos</h2>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                            <img class="w-100 rounded" src="./content/Produto1.jpeg" alt="Imagem de um mini ar condicionado">
+                            <h4 class="h5 mt-1">Mini ar condicionado</h4>
+                            <time class="mb-2 d-block">R$ 500,00</time>
+                            <a class="btn btn-success btn-sm w-100" href="https://www.amazon.com.br/Arcondicionado-Portátil-Climatizador-Quarto-Caminhão/dp/B0CJL1F693/ref=asc_df_B0CJL1F693/?tag=googleshopp00-20&linkCode=df0&hvadid=709968341215&hvpos=&hvnetw=g&hvrand=6842127334789213382&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9196892&hvtargid=pla-2275955946840&psc=1&mcid=1b98340afeaa3686b25d4bbbd0e0ed1d&tag=googleshopp00-20&linkCode=df0&hvadid=709968341215&hvpos=&hvnetw=g&hvrand=6842127334789213382&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9196892&hvtargid=pla-2275955946840&psc=1&language=pt_BR&gad_source=1">Comprar</a>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                            <img class="w-100 rounded" src="./content/Produto2.jpg" alt="Imagem de um ">
+                            <h4 class="h5 mt-1">Robô apirador de pó</h4>
+                            <time class="mb-2 d-block">R$ 400,00</time>
+                            <a class="btn btn-success btn-sm w-100" href="https://www.amazon.com.br/Aspirador-WAP-W90-Automático-Recarregável/dp/B0B9PSBNYL/ref=asc_df_B0B9PSBNYL/?tag=googleshopp00-20&linkCode=df0&hvadid=709968341272&hvpos=&hvnetw=g&hvrand=6972878312672025483&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9196892&hvtargid=pla-1885705751892&mcid=40d724f73e893ef58ea6f36d89a94273&language=pt_BR&gad_source=1&th=1">Comprar</a>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                            <img class="w-100 rounded" src="./content/Produto3.jpeg" alt="Imagem de um ">
+                            <h4 class="h5 mt-1">Capa para Iphone X</h4>
+                            <time class="mb-2 d-block">R$ 30,00</time>
+                            <a class="btn btn-success btn-sm w-100" href="https://shopee.com.br/product/924654697/23413754931?gads_t_sig=VTJGc2RHVmtYMTlxTFVSVVRrdENkVHQ3ZkZSUTMrR3pBWmZZNzdrcnRBMVlSdFovQWpDR1E5WXJSTkdXSXhWOTQvUjgrbzBGM2NXMjRNU01RTERCdGxBd0VTUTdhRmtLQ202ejJpUElIYlhsZW1xWnBGaG0vSERWaGRZeFo5WEl1cGJIZmU4djVta2NYamM2TENienBnPT0&gad_source=1&gclid=Cj0KCQiA8q--BhDiARIsAP9tKI1nm5K0VZMKcnAFVtWFTg8bO_ejShlcBnRua-0Z_mXHMlw5pOVkzxUaAv2_EALw_wcB&af_click_lookback=7d&af_reengagement_window=7d&af_siteid=an_18112960000&af_sub_siteid=GjexCZzGWoQ-1.WtqqpgLKjRDlga9Lg57g&af_viewthrough_lookback=1d&c=-&is_retargeting=true&pid=affiliates&utm_campaign=-&utm_content=GjexCZzGWoQ-1.WtqqpgLKjRDlga9Lg57g&utm_medium=affiliates&utm_source=an_18112960000&utm_term=7q1arjw3gkb9">Comprar</a>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                            <img class="w-100 rounded" src="./content/Produto4.jpg" alt="Imagem de um ">
+                            <h4 class="h5 mt-1">Máquina de barbear</h4>
+                            <time class="mb-2 d-block">R$ 80,00</time>
+                            <a class="btn btn-success btn-sm w-100" href="https://www.amazon.com.br/Profissional-Acabamento-Personalizada-Limitador-Recarregável/dp/B0BH9GN5T7/ref=asc_df_B0BH9GN5T7/?tag=googleshopp00-20&linkCode=df0&hvadid=709963977524&hvpos=&hvnetw=g&hvrand=13712134532387279085&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9196892&hvtargid=pla-1837835579673&psc=1&mcid=adfd8fea30d139f0acfab810e4363996&tag=googleshopp00-20&linkCode=df0&hvadid=709963977524&hvpos=&hvnetw=g&hvrand=13712134532387279085&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9196892&hvtargid=pla-1837835579673&psc=1&language=pt_BR&gad_source=1">Comprar</a>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                            <img class="w-100 rounded" src="./content/Produto5.jpeg" alt="Imagem de um ">
+                            <h4 class="h5 mt-1">Kit de panelas de inox</h4>
+                            <time class="mb-2 d-block">R$ 350,00</time>
+                            <a class="btn btn-success btn-sm w-100" href="https://www.magazineluiza.com.br/jogo-de-panelas-eirilar-antiaderente-de-aluminio-grafite-12-pecas-facility/p/238315800/ud/cjpn/?&seller_id=magazineluiza&utm_source=google&utm_medium=cpc&utm_term=78757&utm_campaign=google_eco_per_ven_pla_all_apo_1p_adv-funnel-trafego-csp-v2&utm_content=&partner_id=78757&gclsrc=aw.ds&gad_source=1&gclid=Cj0KCQiA8q--BhDiARIsAP9tKI2k6a6ik_r4WADEY0Q-dWW21VFBQxKThYm2UaM0ryJp9EmsERMBWUMaAqKrEALw_wcB">Comprar</a>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                            <img class="w-100 rounded" src="./content/Produto6.jpg" alt="Imagem de um ">
+                            <h4 class="h5 mt-1">Brinquedo pop it</h4>
+                            <time class="mb-2 d-block">R$ 20,00</time>
+                            <a class="btn btn-success btn-sm w-100" href="https://produto.mercadolivre.com.br/MLB-4291091776-brinquedo-de-silicone-anti-stress-sensorial-pop-it-autismo-_JM?matt_tool=80237899&matt_word=&matt_source=google&matt_campaign_id=22090354532&matt_ad_group_id=173090625556&matt_match_type=&matt_network=g&matt_device=c&matt_creative=727882734402&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=553132044&matt_product_id=MLB4291091776&matt_product_partition_id=2389560436490&matt_target_id=aud-1966852281496:pla-2389560436490&cq_src=google_ads&cq_cmp=22090354532&cq_net=g&cq_plt=gp&cq_med=pla&gad_source=1&gclid=Cj0KCQiA8q--BhDiARIsAP9tKI2SGgDCEIx6oF4kdCNy29T86A7vb6pyC_y2HYjP0rlKmzBA-UQZe9EaAkg8EALw_wcB">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-2 d-flex justify-content-end ads">
+                    <div class="d-flex flex-column">
+                        <h3 class="mb-4 text-center pt-4">Anunciantes</h3>
+                        <img class="w-100" src="./content/Anuncio1.jpeg">
+                        <a href="https://www.nike.com.br/?utm_source=google&utm_medium=cpc&utm_campaign=SN_NIKE-INST-ROAS&gad_source=1&gclid=Cj0KCQiA8q--BhDiARIsAP9tKI05UEXN7oGHixFN3zMf9Zs3CQL9xFF0tJJvtEWKzDjMcbjzsw_1I84aAhZ9EALw_wcB&utm_referrer=https://www.google.com/" class="mb-3">Todos os tênis com 30% off em nosso site!</a>
+                        <img class="w-100" src="./content/Anuncio2.jpg">
+                        <a href="https://www.destaqueford.com.br/?gad_source=1&gclid=Cj0KCQiA8q--BhDiARIsAP9tKI1NBx5IvAeNR9beh_tM4isY4amaK3HbWKKHmVBybpEqLCS5dJZ-H2MaAkoOEALw_wcB" class="mb-3">Troque seu usado em uma SUV 0Km!</a>
+                        <img class="w-100" src="./content/Anuncio3.jpeg">
+                        <a href="https://www.mcdonalds.com.br" class="mb-3">Sorteio do nosso combo clássico!</a>
+                        <img class="w-100" src="./content/Anuncio4.jpeg">
+                        <a href="https://www.polowear.com.br/?srsltid=AfmBOoqwwbfMF3zEEKMPHjvoAJjRzQDFHmihs1upLBdad9Ym_im6gIiL" class="mb-3">Compre uma polo leve duas essa semana!</a>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </section>
+
+    <section id="noticias" class="mb-5">
+        <div class="container">
+            <div class="row">
+                <h2 class="mb-4 text-center pb-3">
+                    Notícias
+                </h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="post mb-3">
+                        <a href="https://g1.globo.com/mg/vales-mg/noticia/2025/03/09/voce-viu-indenizacao-da-samarco-assassinato-e-acidentes-estao-entre-as-noticias-mais-lidas-da-semana.ghtml">
+                            <img class="d-block w-100 rounded mb-2" src="./content/FotoNoticias1.jpg" alt="Sede da Samarco">
+                        </a>
+                        <a class="h5" href="https://g1.globo.com/mg/vales-mg/noticia/2025/03/09/voce-viu-indenizacao-da-samarco-assassinato-e-acidentes-estao-entre-as-noticias-mais-lidas-da-semana.ghtml">
+                            Você viu? Indenização da Samarco, assassinato e acidentes estão entre as notícias mais lidas da semana
+                        </a>
+                    </div>
+                    <div class="post mb-3">
+                        <a href="https://www.vgnoticias.com.br/cidades/semana-da-mulher-oferece-diversos-servicos-gratuitos-na-praca-alencastro/127789">
+                            <img class="d-block w-100 rounded mb-2" src="./content/FotoNoticias2.jpg" alt="Praça Alencastro">
+                        </a>
+                        <a class="h5" href="https://www.vgnoticias.com.br/cidades/semana-da-mulher-oferece-diversos-servicos-gratuitos-na-praca-alencastro/127789">
+                            “Semana da Mulher” oferece diversos serviços gratuitos na Praça Alencastro
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="post mb-3">
+                        <a href="https://www.bbc.com/portuguese/articles/c62xzkykyg9o">
+                            <img class="d-block w-100 rounded mb-2" src="./content/FotoNoticias3.jpeg" alt="Ucrânia">
+                        </a>
+                        <a class="h5" href="https://www.bbc.com/portuguese/articles/c62xzkykyg9o">
+                            O que EUA, Rússia e Europa estão preparando para nova negociação sobre Ucrânia
+                        </a>
+                    </div>
+                    <div class="post mb-3">
+                        <a href="https://www.noticiasagricolas.com.br/videos/clima/395859-frente-fria-se-aproxima-e-traz-precipitacoes-para-sul-e-sudeste-a-partir-do-fim-de-semana.html">
+                            <img class="d-block w-100 rounded mb-2" src="./content/FotoNoticias4.jpeg" alt="Mapa térmico Brasil">
+                        </a>
+                        <a class="h5" href="https://www.noticiasagricolas.com.br/videos/clima/395859-frente-fria-se-aproxima-e-traz-precipitacoes-para-sul-e-sudeste-a-partir-do-fim-de-semana.html">
+                            Frente fria se aproxima e traz precipitações para sul e sudeste a partir do fim de semana
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 last-col">
+                    <div class="post mb-3">
+                        <a href="https://www.estadao.com.br/paladar/guiadosvinhos/index.php?route=blog/blog&blog_id=173">
+                            <img class="d-block w-100 rounded mb-2" src="./content/FotoNoticias5.jpg" alt="Taça de vinho">
+                        </a>
+                        <a class="h5" href="https://www.estadao.com.br/paladar/guiadosvinhos/index.php?route=blog/blog&blog_id=173">
+                            Suzana Barelli: As Notícias da Semana no Mundo do Vinho 15 a 21 de fevereiro de 2025
+                        </a>
+                    </div>
+                    <div class="post mb-3">
+                        <a href="https://www.noticiasagricolas.com.br/videos/tempo-e-dinheiro/395905-depois-do-susto-soja-fecha-semana-bem-comenta-vlamir-brandalizze.html">
+                            <img class="d-block w-100 rounded mb-2" src="./content/FotoNoticias6.png" alt="Plantação de soja">
+                        </a>
+                        <a class="h5" href="https://www.noticiasagricolas.com.br/videos/tempo-e-dinheiro/395905-depois-do-susto-soja-fecha-semana-bem-comenta-vlamir-brandalizze.html">
+                            Depois do susto Soja fecha semana bem, comenta Vlamir Brandalizze
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="politica" class="mb-5">
+        <div class="container">
+            <div class="row">
+                <h2 class="mb-4 text-center pb-3">
+                    Política
+                </h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="post mb-3">
+                        <a href="https://noticias.uol.com.br/politica/ultimas-noticias/2025/03/09/sarney-defende-que-mdb-apoie-lula-e-diz-que-faltam-liderancas-no-congresso.htm">
+                            <img class="d-block w-100 rounded mb-2" src="./content/FotoPolitica1.jpeg" alt="Lula e Sarney">
+                        </a>
+                        <a class="h5" href="https://noticias.uol.com.br/politica/ultimas-noticias/2025/03/09/sarney-defende-que-mdb-apoie-lula-e-diz-que-faltam-liderancas-no-congresso.htm">
+                            Sarney defende que MDB apoie Lula e diz que faltam lideranças no Congresso
+                        </a>
+                    </div>
+                    <div class="post mb-3">
+                        <a href="https://www.metropoles.com/brasil/gusttavo-lima-definicao-sobre-carreira-politica-fica-para-2026">
+                            <img class="d-block w-100 rounded mb-2" src="./content/FotoPolitica2.jpeg" alt="Gustavo Lima">
+                        </a>
+                        <a class="h5" href="https://www.metropoles.com/brasil/gusttavo-lima-definicao-sobre-carreira-politica-fica-para-2026">
+                            Gusttavo Lima: definição sobre carreira política fica para 2026
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="post mb-3">
+                        <a href="https://jovempan.com.br/noticias/politica/saiba-quem-sao-as-13-testemunhas-apresentadas-pela-defesa-de-bolsonaro-ao-stf-no-caso-do-suposto-plano-golpista.html">
+                            <img class="d-block w-100 rounded mb-2" src="./content/FotoPolitica3.jpeg" alt="Bolsonaro">
+                        </a>
+                        <a class="h5" href="https://jovempan.com.br/noticias/politica/saiba-quem-sao-as-13-testemunhas-apresentadas-pela-defesa-de-bolsonaro-ao-stf-no-caso-do-suposto-plano-golpista.html">
+                            Saiba quem são as 13 testemunhas apresentadas pela defesa de Bolsonaro ao STF no caso do suposto plano golpista
+                        </a>
+                    </div>
+                    <div class="post mb-3">
+                        <a href="https://noticias.uol.com.br/politica/ultimas-noticias/2025/03/09/que-tal-a-imprensa-ficar-1-dia-sem-falar-de-donald-trump.htm">
+                            <img class="d-block w-100 rounded mb-2" src="./content/FotoPolitica4.jpeg" alt="Donald Trump">
+                        </a>
+                        <a class="h5" href="https://noticias.uol.com.br/politica/ultimas-noticias/2025/03/09/que-tal-a-imprensa-ficar-1-dia-sem-falar-de-donald-trump.htm">
+                            Que tal a imprensa ficar um dia sem falar de Donald Trump?
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 last-col">
+                    <div class="post mb-3">
+                        <a href="https://jovempan.com.br/noticias/politica/gleisi-hoffmann-rebate-fala-de-bolsonaro-que-chamou-mulheres-petistas-de-feias-e-incomiveis.html">
+                            <img class="d-block w-100 rounded mb-2" src="./content/FotoPolitica5.jpg" alt="Gleisi Hoffmann">
+                        </a>
+                        <a class="h5" href="https://jovempan.com.br/noticias/politica/gleisi-hoffmann-rebate-fala-de-bolsonaro-que-chamou-mulheres-petistas-de-feias-e-incomiveis.html">
+                            Gleisi Hoffmann rebate fala de Bolsonaro que chamou mulheres petistas de "feias" e "incomíveis"
+                        </a>
+                    </div>
+                    <div class="post mb-3">
+                        <a href="https://noticias.r7.com/record-news/conexao-record-news/video/analise-a-politica-domestica-sul-coreana-e-complexa-explica-especialista-07032025/">
+                            <img class="d-block w-100 rounded mb-2" src="./content/FotoPolitica6.jpg" alt="Yoon Suk Yeol">
+                        </a>
+                        <a class="h5" href="https://noticias.r7.com/record-news/conexao-record-news/video/analise-a-politica-domestica-sul-coreana-e-complexa-explica-especialista-07032025/">
+                            Análise: A política doméstica sul-coreana é complexa, explica especialista
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="economia" class="mb-5">
+        <div class="container">
+            <div class="row">
+                <h2 class="mb-4 text-center pb-3">
+                    Economia
+                </h2>
+            </div>
+            <div class="row">
+                <div class="col-ms-12 col-md-6 col-lg-4">
+                    <div class="post mb-3">
+                        <a href="https://valorinveste.globo.com/mercados/brasil-e-politica/noticia/2025/03/10/boletim-focus-depois-de-estacionar-na-semana-passada-previsao-para-inflacao-volta-a-subir.ghtml">
+                            <img class="d-block w-100 rounded mb-2" src="./content/FotoEconomia1.jpeg" alt="Cédulas de real">
+                        </a>
+                        <a class="h5" href="https://valorinveste.globo.com/mercados/brasil-e-politica/noticia/2025/03/10/boletim-focus-depois-de-estacionar-na-semana-passada-previsao-para-inflacao-volta-a-subir.ghtml">
+                            Boletim Focus: Depois de estacionar na semana passada, previsão para inflação volta a subir
+                        </a>
+                    </div>
+                    <div class="post mb-3">
+                        <a href="https://www.infomoney.com.br/mundo/sem-dor-sem-ganho-esta-se-tornando-o-lema-da-equipe-economica-de-trump/">
+                            <img class="d-block w-100 rounded mb-2" src="./content/FotoEconomia2.jpeg" alt="Donald Trump">
+                        </a>
+                        <a class="h5" href="https://www.infomoney.com.br/mundo/sem-dor-sem-ganho-esta-se-tornando-o-lema-da-equipe-economica-de-trump/">
+                            “Sem dor, sem ganho” está se tornando o lema da equipe econômica de Trump
+                        </a>
+                    </div>
+                </div>
+                <div class="col-ms-12 col-md-6 col-lg-4">
+                    <div class="post mb-3">
+                        <a href="https://g1.globo.com/economia/noticia/2025/03/08/dilma-bolsonaro-e-agora-lula-ja-baixaram-impostos-sobre-alimentos-economistas-veem-impacto-limitado.ghtml">
+                            <img class="d-block w-100 rounded mb-2" src="./content/FotoEconomia3.jpg" alt="Lula, Dilma e Bolsonaro">
+                        </a>
+                        <a class="h5" href="https://g1.globo.com/economia/noticia/2025/03/08/dilma-bolsonaro-e-agora-lula-ja-baixaram-impostos-sobre-alimentos-economistas-veem-impacto-limitado.ghtml">
+                            Dilma, Bolsonaro e agora Lula já baixaram impostos sobre alimentos; economistas veem impacto limitado
+                        </a>
+                    </div>
+                    <div class="post mb-3">
+                        <a href="https://tribunaonline.com.br/economia/juros-altos-e-incertezas-devem-atingir-a-economia-232789?home=espírito+santo">
+                            <img class="d-block w-100 rounded mb-2" src="./content/FotoEconomia4.jpg" alt="Imagem inflação">
+                        </a>
+                        <a class="h5" href="https://tribunaonline.com.br/economia/juros-altos-e-incertezas-devem-atingir-a-economia-232789?home=espírito+santo">
+                            Juros altos e incertezas devem atingir a economia
+                        </a>
+                    </div>
+                </div>
+                <div class="col-ms-12 col-md-6 col-lg-4 last-col">
+                    <div class="post mb-3">
+                        <a href="https://www.moneytimes.com.br/pressao-aumenta-tanto-no-atacado-quanto-no-varejo-e-alta-do-igp-di-dispara-a-10-em-fevereiro-gll/">
+                            <img class="d-block w-100 rounded mb-2" src="./content/FotoEconomia5.jpg" alt="Imagem moedas">
+                        </a>
+                        <a class="h5" href="https://www.moneytimes.com.br/pressao-aumenta-tanto-no-atacado-quanto-no-varejo-e-alta-do-igp-di-dispara-a-10-em-fevereiro-gll/">
+                            Pressão aumenta tanto no atacado quanto no varejo e alta do IGP-DI dispara a 1,0% em fevereiro
+                        </a>
+                    </div>
+                    <div class="post mb-3">
+                        <a href="https://valorinveste.globo.com/mercados/renda-variavel/bolsas-e-indices/noticia/2025/03/10/semana-e-marcada-dados-de-atividades-e-inflacao-no-brasil-e-estados-unidos.ghtml">
+                            <img class="d-block w-100 rounded mb-2" src="./content/FotoEconomia6.jpg" alt="Ilustração IPCA">
+                        </a>
+                        <a class="h5" href="https://valorinveste.globo.com/mercados/renda-variavel/bolsas-e-indices/noticia/2025/03/10/semana-e-marcada-dados-de-atividades-e-inflacao-no-brasil-e-estados-unidos.ghtml">
+                            Semana é marcada dados de atividades e inflação no Brasil e Estados Unidos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tecnologia" class="mb-5">
+        <div class="container">
+            <div class="row">
+                <h2 class="mb-4 text-center pb-3">
+                    Tecnologia
+                </h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="post mb-3">
+                        <a href="https://oglobo.globo.com/brasil/noticia/2025/03/09/tribunal-planeja-compra-de-50-iphones-16-pro-max-para-desembargadores-por-meio-milhao-de-reais.ghtml">
+                            <img class="d-block w-100 rounded mb-2" src="./content/FotoTecnologia1.jpeg" alt="Iphone 16">
+                        </a>
+                        <a class="h5" href="https://oglobo.globo.com/brasil/noticia/2025/03/09/tribunal-planeja-compra-de-50-iphones-16-pro-max-para-desembargadores-por-meio-milhao-de-reais.ghtml">
+                            Tribunal planeja compra de 50 iPhones 16 Pro Max para desembargadores por meio milhão de reais
+                        </a>
+                    </div>
+                    <div class="post mb-3">
+                        <a href="https://oglobo.globo.com/mundo/noticia/2025/03/09/o-odio-a-elon-musk-tornou-sua-empresa-de-carros-eletricos-a-tesla-alvo-de-ataques.ghtml">
+                            <img class="d-block w-100 rounded mb-2" src="./content/FotoTecnologia2.jpg" alt="Carro Tesla">
+                        </a>
+                        <a class="h5" href="https://oglobo.globo.com/mundo/noticia/2025/03/09/o-odio-a-elon-musk-tornou-sua-empresa-de-carros-eletricos-a-tesla-alvo-de-ataques.ghtml">
+                            O ódio a Elon Musk tornou sua empresa de carros elétricos, a Tesla, alvo de ataques
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="post mb-3">
+                        <a href="https://www.uol.com.br/guia-de-compras/ultimas-noticias/2025/03/09/esquenta-da-semana-do-consumidor.htm">
+                            <img class="d-block w-100 rounded mb-2" src="./content/FotoTecnologia3.jpeg" alt="Ciaxa da Amazon">
+                        </a>
+                        <a class="h5" href="https://www.uol.com.br/guia-de-compras/ultimas-noticias/2025/03/09/esquenta-da-semana-do-consumidor.htm">
+                            Amazon promete descontos de até 80% a partir de amanhã; saiba aproveitar
+                        </a>
+                    </div>
+                    <div class="post mb-3">
+                        <a href="https://g1.globo.com/fantastico/noticia/2025/03/09/relacionamentos-com-parceiros-criados-por-ia-ja-sao-realidade.ghtml">
+                            <img class="d-block w-100 rounded mb-2" src="./content/FotoTecnologia4.jpg" alt="Pessoa e IA">
+                        </a>
+                        <a class="h5" href="https://g1.globo.com/fantastico/noticia/2025/03/09/relacionamentos-com-parceiros-criados-por-ia-ja-sao-realidade.ghtml">
+                            Relacionamentos com parceiros criados por IA já são realidade
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 last-col">
+                    <div class="post mb-3">
+                        <a href="https://www.uol.com.br/guia-de-compras/ultimas-noticias/2025/03/10/galaxy-s25-ultra-x-s24-ultra-veja-o-que-mudou-no-top-de-linha-da-samsung.htm">
+                            <img class="d-block w-100 rounded mb-2" src="./content/FotoTecnologia5.jpg" alt="Galaxy S25 Ultra">
+                        </a>
+                        <a class="h5" href="https://www.uol.com.br/guia-de-compras/ultimas-noticias/2025/03/10/galaxy-s25-ultra-x-s24-ultra-veja-o-que-mudou-no-top-de-linha-da-samsung.htm">
+                            Galaxy S25 Ultra x S24 Ultra: saiba o que muda no novo celular da Samsung
+                        </a>
+                    </div>
+                    <div class="post mb-3">
+                        <a href="https://revistaoeste.com/tecnologia/starlink-anuncia-modelos-de-celulares-que-terao-acesso-direto-aos-satelites/">
+                            <img class="d-block w-100 rounded mb-2" src="./content/FotoTecnologia6.jpg" alt="Celular Starlink">
+                        </a>
+                        <a class="h5" href="https://revistaoeste.com/tecnologia/starlink-anuncia-modelos-de-celulares-que-terao-acesso-direto-aos-satelites/">
+                            Starlink anuncia modelos de celulares que terão acesso direto aos satélites
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="esportes" class="mb-5">
+        <div class="container">
+            <div class="row">
+                <h2 class="mb-4 text-center pb-3">
+                    Esportes
+                </h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="post mb-3">
+                        <a href="https://cultura.uol.com.br/esporte/noticias/2025/03/09/9713_corinthians-x-santos-horario-e-onde-assistir-a-semifinal-do-campeonato-paulista.html"><img class="d-block w-100 rounded mb-2" src="./content/FotoEsportes1.jpg" alt="Foto Yuri Alberto e Neymar"></a>
+                        <a class="h5" href="https://cultura.uol.com.br/esporte/noticias/2025/03/09/9713_corinthians-x-santos-horario-e-onde-assistir-a-semifinal-do-campeonato-paulista.html">
+                        Corinthians x Santos: horário e onde assistir à semifinal do Campeonato Paulista
+                        </a>
+                    </div>
+                    <div class="post mb-3">
+                        <a href="https://www.uol.com.br/esporte/ultimas-noticias/2025/03/09/selecao-brasileira-de-futsal-e-campea-invicta-em-copa-intercontinental.htm"><img class="d-block w-100 rounded mb-2" src="./content/FotoEsportes4.jpeg" alt="Brasil campeão de futsal"></a>
+                        <a class="h5" href="https://www.uol.com.br/esporte/ultimas-noticias/2025/03/09/selecao-brasileira-de-futsal-e-campea-invicta-em-copa-intercontinental.htm">
+                            Brasil vence o Irã e é campeão invicto da Copa Intercontinental de futsal
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="post mb-3">
+                        <a href="https://www.espn.com.br/mma/ufc/artigo/_/id/14890145/ufc-313-alex-poatan-defende-todas-as-quedas-mas-e-derrotado-em-pe-por-magomed-ankalaev-perde-cinturao"><img class="d-block w-100 rounded mb-2" src="./content/FotoEsportes2.jpeg" alt="Foto luta de Poatan"></a>
+                        <a class="h5" href="https://www.espn.com.br/mma/ufc/artigo/_/id/14890145/ufc-313-alex-poatan-defende-todas-as-quedas-mas-e-derrotado-em-pe-por-magomed-ankalaev-perde-cinturao">
+                            Alex Poatan defende todas as quedas, mas é derrotado em pé por Ankalaev e perde cinturão do UFC
+                        </a>
+                    </div>
+                    <div class="post mb-3">
+                        <a href="https://www.uol.com.br/esporte/futebol/ultimas-noticias/2025/03/09/acertado-com-o-botafogo-volante-sofre-racismo-e-e-expulso-na-russia.htm"><img class="d-block w-100 rounded mb-2" src="./content/FotoEsportes5.jpeg" alt="Foto Wendel"></a>
+                        <a class="h5" href="https://www.uol.com.br/esporte/futebol/ultimas-noticias/2025/03/09/acertado-com-o-botafogo-volante-sofre-racismo-e-e-expulso-na-russia.htm">
+                            Reforço do Botafogo, volante Wendel é expulso após reagir a ofensa racista na Rússia
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 last-col">
+                    <div class="post mb-3">
+                        <a href="https://br.bolavip.com/futebol/neymar-recebe-proposta-de-clube-da-europa-1-mes-apos-chegar-ao-santos"><img class="d-block w-100 rounded mb-2" src="./content/FotoEsportes3.jpeg" alt="Foto de Neymar"></a>
+                        <a class="h5" href="https://br.bolavip.com/futebol/neymar-recebe-proposta-de-clube-da-europa-1-mes-apos-chegar-ao-santos">
+                            Neymar recebe proposta de clube da Europa, 1 mês após chegar ao Santos
+                        </a>
+                    </div>
+                    <div class="post mb-3">
+                        <a href="https://ge.globo.com/basquete/nba/noticia/2025/03/09/lebron-james-deve-desfalcar-os-lakers-por-ate-duas-semanas-por-conta-de-lesao.ghtml"><img class="d-block w-100 rounded mb-2" src="./content/FotoEsportes6.jpeg" alt="Foto Lebron James"></a>
+                        <a class="h5" href="https://ge.globo.com/basquete/nba/noticia/2025/03/09/lebron-james-deve-desfalcar-os-lakers-por-ate-duas-semanas-por-conta-de-lesao.ghtml">
+                            LeBron James deve desfalcar os Lakers por até duas semanas por conta de lesão
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contato">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="mb-4 pb-3">Dê sua sugestão de notícia!</h2>
+                    <form>
+                        <label class="form-label" for="nome">Seu nome:</label>
+                        <input class="form-control" type="text" id="nome" required
+                        oninvalid="this.setCustomValidity('Por favor, preencha seu nome e sobrenome')" oninput="this.setCustomValidity('')">
+                        <label for="email" class="form-label">Seu e-mail:</label>
+                        <input type="email" id="email" class="form-control" required
+                        oninvalid="this.setCustomValidity('Por favor, preencha seu email corretamente')" oninput="this.setCustomValidity('')">
+                        <label for="mensagem" class="form-label">Sua mensagem:</label>
+                        <textarea id="mensagem" class="form-control" required
+                        oninvalid="this.setCustomValidity('Por favor, deixe sua mensagem!')" oninput="this.setCustomValidity('')"></textarea>
+                        <div class="form-check form-switch">
+                            <label for="termos" class="form-check-label">Li e concordo com os termos do site</label>
+                            <input id="termos" type="checkbox" class="form-check-input">
+                        </div>
+                        <button class="btn btn-success mt-3 mb-3">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="alerta" class="container sticky-bottom">
+        <div class="row">
+            <div class="col-12">
+                <div class="alert alert-dark alert-dismissible fade show d-flex justify-content-between align-items-center">
+                    Ao entrar em nosso site, você concorda com nossa política de privacidade e cookies
+                    <button class="btn fw-bold" data-bs-dismiss="alert" aria-label="Fechar">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container pt-2 pb-2 d-flex justify-content-center">
+            &copy; Portal de notícias 2025 - Todos os direitos reservados
+        </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
