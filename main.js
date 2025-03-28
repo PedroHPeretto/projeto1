@@ -1,4 +1,7 @@
 $(document).ready(function () {
+
+    /* função email modal */
+
     $("form").on("submit", function (event) {
         event.preventDefault()
 
@@ -14,4 +17,12 @@ $(document).ready(function () {
             emailInput[0].reportValidity();
         }
     })
+
+    /* validação contato */
+    
+    $('#nome').mask('Z', {
+        translation: {
+            'Z': { pattern: /[A-Za-zÀ-ÖØ-öø-ÿ ]/, recursive: true }
+        }
+    });
 })
